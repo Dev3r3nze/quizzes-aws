@@ -1,7 +1,7 @@
 # Quizzes AWS
 
 ## Cuestionarios de certificación
-Se trata de una web dedicada a la preparación a las certificaciones de AWS Developer y AWS DevOps Engeneer
+Web dedicada a la preparación a las certificaciones de AWS Developer y AWS DevOps Engeneer
 
 ## Funcionamiento:
 1. Eliges el tema o servicio que queras repasar (también puede ser aleatorio)
