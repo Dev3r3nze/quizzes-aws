@@ -1,0 +1,21 @@
+{
+    "preguntas": [
+      {
+        "enunciado": "La respuesta de IAM correcta es 3",
+        "respuesta1": "1",
+        "respuesta2": "2",
+        "respuesta3": "3",
+        "respuesta4": "4",
+        "respuestaCorrecta": "3"
+      },
+      {
+        "enunciado": "La respuesta de IAM correcta es 4",
+        "respuesta1": "1",
+        "respuesta2": "2",
+        "respuesta3": "3",
+        "respuesta4": "4",
+        "respuestaCorrecta": "4"
+
+      }
+    ]
+  }

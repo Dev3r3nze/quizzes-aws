@@ -1,0 +1,58 @@
+{
+    "preguntas": [
+      {
+        "enunciado": "La respuesta de S3 correcta es 1",
+        "respuesta1": "1",
+        "respuesta2": "2",
+        "respuesta3": "3",
+        "respuesta4": "4",
+        "respuestaCorrecta": "1"
+
+      },
+      {
+        "enunciado": "La respuesta de S3 correcta es 2",
+        "respuesta1": "1",
+        "respuesta2": "2",
+        "respuesta3": "3",
+        "respuesta4": "4",
+        "respuestaCorrecta": "2"
+
+      },
+      {
+        "enunciado": "La respuesta de S3 correcta es 1",
+        "respuesta1": "1",
+        "respuesta2": "2",
+        "respuesta3": "3",
+        "respuesta4": "4",
+        "respuestaCorrecta": "1"
+
+      },
+      {
+        "enunciado": "La respuesta de S3 correcta es 2",
+        "respuesta1": "1",
+        "respuesta2": "2",
+        "respuesta3": "3",
+        "respuesta4": "4",
+        "respuestaCorrecta": "2"
+
+      },
+      {
+        "enunciado": "La respuesta de S3 correcta es 1",
+        "respuesta1": "1",
+        "respuesta2": "2",
+        "respuesta3": "3",
+        "respuesta4": "4",
+        "respuestaCorrecta": "1"
+
+      },
+      {
+        "enunciado": "La respuesta de S3 correcta es 2",
+        "respuesta1": "1",
+        "respuesta2": "2",
+        "respuesta3": "3",
+        "respuesta4": "4",
+        "respuestaCorrecta": "2"
+
+      }
+    ]
+}
