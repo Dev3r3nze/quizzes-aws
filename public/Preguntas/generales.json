@@ -1,0 +1,228 @@
+{
+  "preguntas": [
+    {
+      "enunciado": "Your application is trying to upload a 6 GB file to Simple Storage Service and receive a 'Your proposed upload exceeds the maximum allowed object size.' error message. What is a possible solution for this?",
+      "respuesta1": "None, Simple Storage Service objects are limited to 5 GB",
+      "respuesta2": "Use the multi-part upload API for this object",
+      "respuesta3": "Use the large object upload API for this object",
+      "respuesta4": "Contact support to increase your object size limit",
+      "respuestaCorrecta": "2",
+      "servicios": "Servicios utilizados: Simple Storage Service, multi-part upload API"
+    },
+    {
+      "enunciado": "A Developer needs temporary access to resources in a second account. What is the MOST secure way to achieve this?",
+      "respuesta1": "Use the Amazon Cognito user pools to get short-lived credentials for the second account",
+      "respuesta2": "Create a dedicated IAM access key for the second account, and send it by mail",
+      "respuesta3": "Create a cross-account access role, and use sts:AssumeRole API to get short-lived credentials",
+      "respuesta4": "Establish trust, and add an SSH key for the second account to the IAM user",
+      "respuestaCorrecta": "3",
+      "servicios": "Servicios utilizados: IAM, STS, cross-account access role"
+    },
+    {
+      "enunciado": "What step is required to update the function with the changes?",
+      "respuesta1": "Delete the .ZIP file on S3, and re-upload by using a different object key name",
+      "respuesta2": "Update the CloudFormation stack with the correct values for the function code properties S3Bucket, S3Key, or S3ObjectVersion",
+      "respuesta3": "Ensure that the function source code is base64-encoded before uploading the deployment package to S3",
+      "respuesta4": "Modify the execution role of the Lambda function to allow S3 access permission to the deployment package .ZIP file",
+      "respuestaCorrecta": "2",
+      "servicios": "AWS CloudFormation, AWS Lambda, Amazon S3"
+    },
+    {
+      "enunciado": "For a deployment using AWS CodeDeploy, what is the run order of the hooks for in-place deployments?",
+      "respuesta1": "Before Install -> Application Stop -> Application Start -> After Install",
+      "respuesta2": "Application Stop -> Before Install -> After Install -> Application Start",
+      "respuesta3": "Before Install -> Application Stop -> Validate Service -> Application Start",
+      "respuesta4": "Application Stop -> Before Install -> Validate Service -> Application Start",
+      "respuestaCorrecta": "2",
+      "servicios": "AWS CodeDeploy"
+    },
+    {
+      "enunciado": "A Developer is writing a serverless application that requires that an AWS Lambda function be invoked every 10 minutes. What is an automated and serverless way to trigger the function?",
+      "respuesta1": "Deploy an Amazon EC2 instance based on Linux, and edit its /etc/crontab file by adding a command to periodically invoke the Lambda function",
+      "respuesta2": "Configure an environment variable named PERIOD for the Lambda function. Set the value to 600",
+      "respuesta3": "Create an Amazon CloudWatch Events rule that triggers on a regular schedule to invoke the Lambda function",
+      "respuesta4": "Create an Amazon SNS topic that has a subscription to the Lambda function with a 600-second timer",
+      "respuestaCorrecta": "3",
+      "servicios": "AWS Lambda, Amazon CloudWatch Events"
+    },
+    {
+      "enunciado": "An application stops working with the following error: The specified bucket does not exist. Where is the BEST place to start the root cause analysis?",
+      "respuesta1": "Check the Elastic Load Balancer logs for DeleteBucket requests",
+      "respuesta2": "Check the application logs in Amazon CloudWatch Logs for Amazon S3 DeleteBucket errors",
+      "respuesta3": "Check AWS X-Ray for Amazon S3 DeleteBucket alarms",
+      "respuesta4": "Check AWS CloudTrail for a DeleteBucket event",
+      "respuestaCorrecta": "4",
+      "servicios": "Amazon S3, AWS CloudTrail, Elastic Load Balancer, Amazon CloudWatch Logs, AWS X-Ray"
+    },
+    {
+      "enunciado": "A Developer must re-implement the business logic for an order fulfilment system. The business logic has to make requests to multiple vendors to decide where to purchase an item. The whole process can take up to a week to complete. What is the MOST efficient and SIMPLEST way to implement a system that meets these requirements?",
+      "respuesta1": "Use AWS Step Functions to execute parallel Lambda functions, and join the results",
+      "respuesta2": "Create an AWS SQS for each vendor, poll the queue from a worker instance, and joint the results",
+      "respuesta3": "Use AWS Lambda to asynchronously call a Lambda function for each vendor, and join the results",
+      "respuesta4": "Use Amazon CloudWatch Events to orchestrate the Lambda functions",
+      "respuestaCorrecta": "1",
+      "servicios": "AWS Step Functions, AWS SQS, AWS Lambda, Amazon CloudWatch Events"
+    },
+    {
+      "enunciado": "A company has three different environments: Development, QA, and Production. The company wants to deploy its code first in the Development environment, then QA, and then Production. Which AWS service can be used to meet this requirement?",
+      "respuesta1": "Use AWS CodeCommit to create multiple repositories to deploy the application",
+      "respuesta2": "Use AWS CodeBuild to create, configure, and deploy multiple build application projects",
+      "respuesta3": "Use AWS Data Pipeline to create multiple data pipeline provisions to deploy the application",
+      "respuesta4": "Use AWS CodeDeploy to create multiple deployment groups",
+      "respuestaCorrecta": "4",
+      "servicios": "AWS CodeCommit, AWS CodeBuild, AWS Data Pipeline, AWS CodeDeploy"
+    },
+    {
+      "enunciado": "Which procedures will deploy a Lambda function?",
+      "respuesta1": "Upload the code to an AWS CodeCommit repository, then add a reference to it in an AWS::Lambda::Function resource in the template",
+      "respuesta2": "Create an AWS::Lambda::Function resource in the template, then write the code directly inside the CloudFormation template",
+      "respuesta3": "Upload a .ZIP file containing the function code to Amazon S3, then add a reference to it in an AWS::Lambda::Function resource in the template",
+      "respuesta4": "Upload a .ZIP file to AWS CloudFormation containing the function code, then add a reference to it in an AWS::Lambda::Function resource in the template",
+      "respuestaCorrecta": [
+        "2",
+        "3"
+      ],
+      "servicios": "AWS Lambda y AWS CloudFormation"
+    },
+    {
+      "enunciado": "An application reads data from an Amazon DynamoDB table. Several times a day, for a period of 15 seconds, the application receives multiple ProvisionedThroughputExceeded errors. How should this exception be handled?",
+      "respuesta1": "Create a new global secondary index for the table to help with the additional requests",
+      "respuesta2": "Retry the failed read requests with exponential backoff",
+      "respuesta3": "Immediately retry the failed read requests",
+      "respuesta4": "Use the DynamoDB “UpdateItem” API to increase the provisioned throughput capacity of the table",
+      "respuestaCorrecta": "2",
+      "servicios": "Amazon DynamoDB"
+    },
+
+    {
+      "enunciado": "How can software determine the public and private IP addresses of the Amazon EC2 instance that it is running on?",
+      "respuesta1": "Query the appropriate Amazon CloudWatch metric",
+      "respuesta2": "Use ipconfig or ifconfig command",
+      "respuesta3": "Query the local instance userdata",
+      "respuesta4": "Query the local instance metadata",
+      "respuestaCorrecta": "4",
+      "servicios": "Amazon EC2"
+    },
+    {
+      "enunciado": "How should ProvisionedThroughputExceeded exceptions be handled in DynamoDB?",
+      "respuesta1": "Create a new global secondary index for the table to help with the additional requests",
+      "respuesta2": "Retry the failed read requests with exponential backoff",
+      "respuesta3": "Immediately retry the failed read requests",
+      "respuesta4": "Use the DynamoDB “UpdateItem” API to increase the provisioned throughput capacity of the table",
+      "respuestaCorrecta": "2",
+      "servicios": "Amazon DynamoDB"
+    },
+
+    {
+      "enunciado": "Which approach should be used to avoid impacting existing clients when deploying a new version of an API in Amazon API Gateway?",
+      "respuesta1": "Update the underlying Lambda function and provide clients with the new Lambda invocation URL",
+      "respuesta2": "Use API Gateway to automatically propagate the change to clients, specifying 180 days in the phased deployment parameter",
+      "respuesta3": "Use API Gateway to deploy a new stage named v2 to the API and provide users with its URL",
+      "respuesta4": "Update the underlying Lambda function, create an Amazon CloudFront distribution with the updated Lambda function as its origin",
+      "respuestaCorrecta": "3",
+      "servicios": "Amazon API Gateway"
+    },
+
+    {
+      "enunciado": "Which of the following statements about SWF are true? (Choose 3 answers)",
+      "respuesta1": "SWF tasks are assigned once and never duplicated",
+      "respuesta2": "SWF requires an S3 bucket for workflow storage",
+      "respuesta3": "SWF workflow executions can last up to a year",
+      "respuesta4": "SWF triggers SNS notifications on task assignment",
+      "respuesta5": "SWF uses deciders and workers to complete tasks",
+      "respuesta6": "SWF requires at least 1 EC2 instance per domain",
+      "respuestaCorrecta": [
+        "1",
+        "3",
+        "5"
+      ],
+      "servicios": "Amazon SWF, Amazon S3, Amazon SNS, Amazon EC2"
+    },
+    {
+      "enunciado": "A Developer is writing a Linux-based application to run on AWS Elastic Beanstalk. Application requirements state that the application must maintain full capacity during updates while minimizing cost. Which type of Elastic Beanstalk deployment policy should the Developer specify for the environment?",
+      "respuesta1": "Immutable",
+      "respuesta2": "Rolling",
+      "respuesta3": "All at Once",
+      "respuesta4": "Rolling with additional batch",
+      "respuestaCorrecta": "4",
+      "servicios": "AWS Elastic Beanstalk"
+    },
+
+    {
+      "enunciado": "What is the maximum number of S3 Buckets available per AWS account?",
+      "respuesta1": "100 per region",
+      "respuesta2": "there is no limit",
+      "respuesta3": "100 per account",
+      "respuesta4": "500 per account",
+      "respuestaCorrecta": "3",
+      "servicios": "Amazon S3"
+    },
+    {
+      "enunciado": "A Developer is writing a mobile application that allows users to view images from an S3 bucket. The users must be able to log in with their Amazon login, as well as Facebook® and/or Google® accounts. How can the Developer provide this authentication functionality?",
+      "respuesta1": "Use Amazon Cognito with web identity federation",
+      "respuesta2": "Use Amazon Cognito with SAML-based identity federation",
+      "respuesta3": "Use AWS IAM Access/Secret keys in the application code to allow Get* on the S3 bucket",
+      "respuesta4": "Use AWS STS AssumeRole in the application code and assume a role with Get* permissions on the S3 bucket",
+      "respuestaCorrecta": "1",
+      "servicios": "Cognito IAM"
+    },
+    {
+      "enunciado": "After launching an instance that you intend to serve as a NAT (Network Address Translation) device in a public subnet you modify your route tables to have the NAT device be the target of internet bound traffic of your private subnet. When you try and make an outbound connection to the Internet from an instance in the private subnet, you are not successful. Which of the following steps could resolve the issue?",
+      "respuesta1": "Attaching a second Elastic Network interface (ENI) to the NAT instance, and placing it in the private subnet",
+      "respuesta2": "Attaching a second Elastic Network Interface (ENI) to the instance in the private subnet, and placing it in the public subnet",
+      "respuesta3": "Disabling the Source/Destination Check attribute on the NAT instance",
+      "respuesta4": "Attaching an Elastic IP address to the instance in the private subnet",
+      "respuestaCorrecta": "3",
+      "servicios": "Elastic"
+    },
+    {
+      "enunciado": "If a message is retrieved from a queue in Amazon SQS, how long is the message inaccessible to other users by default?",
+      "respuesta1": "0 seconds",
+      "respuesta2": "1 hour",
+      "respuesta3": "forever",
+      "respuesta4": "30 seconds",
+      "respuestaCorrecta": "4",
+      "servicios": "Amazon SQS"
+    },
+    {
+      "enunciado": "Which of the following platforms are supported by Elastic Beanstalk? Choose 2 answers",
+      "respuesta1": "Apache Tomcat",
+      "respuesta2": ".NET",
+      "respuesta3": "IBM Websphere",
+      "respuesta4": "Oracle JBoss",
+      "respuesta5": "PHP",
+      "respuestaCorrecta": ["1","2"],
+      "servicios": "Elastic Beanstalk"
+    },
+    {
+      "enunciado": "A company needs a fully-managed source control service that will work in AWS. The service must ensure that revision control synchronizes multiple distributed repositories by exchanging sets of changes peer-to-peer. All users need to work productively even when not connected to a network",
+      "respuesta1": "Subversion",
+      "respuesta2": "AWS CodeBuild",
+      "respuesta3": "AWS CodeCommit",
+      "respuesta4": "AWS CodeStar",
+      "respuestaCorrecta": "3",
+      "servicios": "Servicios de la pregunta 1"
+    },
+    {
+      "enunciado": "A Developer has published an update to an application that is served to a global user base using Amazon CloudFront. After deploying the application, users are not able to see the updated changes",
+      "respuesta1": "Remove the origin from the CloudFront configuration and add it again",
+      "respuesta2": "Disable forwarding of query strings and request headers from the CloudFront distribution configuration",
+      "respuesta3": "Invalidate all the application objects from the edge caches",
+      "respuesta4": "Disable the CloudFront distribution and enable it again to update all the edge locations",
+      "respuestaCorrecta": "3",
+      "servicios": "Servicios de la pregunta 2"
+    },
+    {
+      "enunciado": "CompanyC is currently hosting their corporate site in an Amazon S3 bucket with Static Website Hosting enabled. Currently, when visitors go to http://www.companyc.com the index.html page is returned. Company C now would like a new page welcome.html to be returned when a visitor enters http://www.companyc.com in the browser",
+      "respuesta1": "Upload an html page named welcome.html to their S3 bucket",
+      "respuesta2": "Create a welcome subfolder in their S3 bucket",
+      "respuesta3": "Set the Index Document property to welcome.html",
+      "respuesta4": "Move the index.html page to a welcome subfolder",
+      "respuestaCorrecta": [
+        "1",
+        "3"
+      ],
+      "servicios": "Amazon S3"
+    }
+  ]
+}
