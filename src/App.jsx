@@ -1,19 +1,23 @@
-import React, { useState } from 'react'
-import './App.css'
+import { useState } from 'react'
+import Formulario from './components/FormularioCompo'
 import Configurador from './components/Configurador'
-import Formulario from './components/Formulario'
+import './App.css'
 
 function App () {
-  const [configurado, setConfigurado] = useState(false)
+  const [mostrarConfigurador, setMostrarConfigurador] = useState(true)
+
+  function reiniciarCuestionario () {
+    setMostrarConfigurador(true)
+  }
 
   return (
     <div className='App'>
-      {configurado
+      {mostrarConfigurador
         ? (
-          <Formulario />
+          <Configurador onIniciarCuestionario={() => setMostrarConfigurador(false)} />
           )
         : (
-          <Configurador setConfigurado={setConfigurado} />
+          <Formulario onTerminarCuestionario={reiniciarCuestionario} />
           )}
     </div>
   )
@@ -25,4 +29,5 @@ export default App
 // Json con preguntas
 // Seleccionar preguntas aleatorias del json
 // Formulario de selecciónd de temas
-// Quizz funcional
+// Repetir formulario o volver al menu
+// Guardar estadisticas para ver progreso

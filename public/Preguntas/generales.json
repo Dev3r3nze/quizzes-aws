@@ -10,6 +10,27 @@
       "servicios": "Servicios utilizados: Simple Storage Service, multi-part upload API"
     },
     {
+      "enunciado": "Which of the following statements about SWF are true? (Choose 3 answers)",
+      "respuesta1": "SWF tasks are assigned once and never duplicated",
+      "respuesta2": "SWF requires an S3 bucket for workflow storage",
+      "respuesta3": "SWF workflow executions can last up to a year",
+      "respuesta4": "SWF triggers SNS notifications on task assignment",
+      "respuesta5": "SWF uses deciders and workers to complete tasks",
+      "respuesta6": "SWF requires at least 1 EC2 instance per domain",
+      "respuestaCorrecta": ["1", "3", "5"],
+      "servicios": "Amazon SWF, Amazon S3, Amazon SNS, Amazon EC2"
+    },
+    {
+      "enunciado": "Which of the following platforms are supported by Elastic Beanstalk? Choose 2 answers",
+      "respuesta1": "Apache Tomcat",
+      "respuesta2": ".NET",
+      "respuesta3": "IBM Websphere",
+      "respuesta4": "Oracle JBoss",
+      "respuesta5": "PHP",
+      "respuestaCorrecta": ["1", "2"],
+      "servicios": "Elastic Beanstalk"
+    },
+    {
       "enunciado": "A Developer needs temporary access to resources in a second account. What is the MOST secure way to achieve this?",
       "respuesta1": "Use the Amazon Cognito user pools to get short-lived credentials for the second account",
       "respuesta2": "Create a dedicated IAM access key for the second account, and send it by mail",
@@ -78,10 +99,7 @@
       "respuesta2": "Create an AWS::Lambda::Function resource in the template, then write the code directly inside the CloudFormation template",
       "respuesta3": "Upload a .ZIP file containing the function code to Amazon S3, then add a reference to it in an AWS::Lambda::Function resource in the template",
       "respuesta4": "Upload a .ZIP file to AWS CloudFormation containing the function code, then add a reference to it in an AWS::Lambda::Function resource in the template",
-      "respuestaCorrecta": [
-        "2",
-        "3"
-      ],
+      "respuestaCorrecta": "3",
       "servicios": "AWS Lambda y AWS CloudFormation"
     },
     {
@@ -123,21 +141,7 @@
       "servicios": "Amazon API Gateway"
     },
 
-    {
-      "enunciado": "Which of the following statements about SWF are true? (Choose 3 answers)",
-      "respuesta1": "SWF tasks are assigned once and never duplicated",
-      "respuesta2": "SWF requires an S3 bucket for workflow storage",
-      "respuesta3": "SWF workflow executions can last up to a year",
-      "respuesta4": "SWF triggers SNS notifications on task assignment",
-      "respuesta5": "SWF uses deciders and workers to complete tasks",
-      "respuesta6": "SWF requires at least 1 EC2 instance per domain",
-      "respuestaCorrecta": [
-        "1",
-        "3",
-        "5"
-      ],
-      "servicios": "Amazon SWF, Amazon S3, Amazon SNS, Amazon EC2"
-    },
+    
     {
       "enunciado": "A Developer is writing a Linux-based application to run on AWS Elastic Beanstalk. Application requirements state that the application must maintain full capacity during updates while minimizing cost. Which type of Elastic Beanstalk deployment policy should the Developer specify for the environment?",
       "respuesta1": "Immutable",
@@ -184,16 +188,7 @@
       "respuestaCorrecta": "4",
       "servicios": "Amazon SQS"
     },
-    {
-      "enunciado": "Which of the following platforms are supported by Elastic Beanstalk? Choose 2 answers",
-      "respuesta1": "Apache Tomcat",
-      "respuesta2": ".NET",
-      "respuesta3": "IBM Websphere",
-      "respuesta4": "Oracle JBoss",
-      "respuesta5": "PHP",
-      "respuestaCorrecta": ["1","2"],
-      "servicios": "Elastic Beanstalk"
-    },
+    
     {
       "enunciado": "A company needs a fully-managed source control service that will work in AWS. The service must ensure that revision control synchronizes multiple distributed repositories by exchanging sets of changes peer-to-peer. All users need to work productively even when not connected to a network",
       "respuesta1": "Subversion",
@@ -218,10 +213,7 @@
       "respuesta2": "Create a welcome subfolder in their S3 bucket",
       "respuesta3": "Set the Index Document property to welcome.html",
       "respuesta4": "Move the index.html page to a welcome subfolder",
-      "respuestaCorrecta": [
-        "1",
-        "3"
-      ],
+      "respuestaCorrecta": "1",
       "servicios": "Amazon S3"
     }
   ]
