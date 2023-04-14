@@ -9,45 +9,46 @@
       "respuestaCorrecta": "2",
       "servicios": "Servicios utilizados: Simple Storage Service, multi-part upload API"
     },
-    {
-      "enunciado": "Which of the following statements about SWF are true? (Choose 3 answers)",
-      "respuesta1": "SWF tasks are assigned once and never duplicated",
-      "respuesta2": "SWF requires an S3 bucket for workflow storage",
-      "respuesta3": "SWF workflow executions can last up to a year",
-      "respuesta4": "SWF triggers SNS notifications on task assignment",
-      "respuesta5": "SWF uses deciders and workers to complete tasks",
-      "respuesta6": "SWF requires at least 1 EC2 instance per domain",
-      "respuestaCorrecta": ["1", "3", "5"],
-      "servicios": "Amazon SWF, Amazon S3, Amazon SNS, Amazon EC2"
+{
+  "enunciado": "A Developer needs temporary access to resources in a second account. What is the MOST secure way to achieve this?",
+  "respuesta1": "Use the Amazon Cognito user pools to get short-lived credentials for the second account.",
+  "respuesta2": "Create a dedicated IAM access key for the second account, and send it by mail.",
+  "respuesta3": "Create a cross-account access role, and use sts:AssumeRole API to get short-lived credentials.",
+  "respuesta4": "Establish trust, and add an SSH key for the second account to the IAM user.",
+  "respuestaCorrecta": "3",
+  "servicios": "IAM, STS, security"
+  },
+  {
+    "enunciado": "A Developer has been asked to make changes to the source code of an AWS Lambda function. The function is managed using an AWS CloudFormation template. The template is configured to load the source code from an Amazon S3 bucket. The Developer manually created a .ZIP file deployment package containing the changes and put the file into the correct location on Amazon S3. When the function is invoked, the code changes have not been applied. What step is required to update the function with the changes?",
+    "respuesta1": "Delete the .ZIP file on S3, and re-upload by using a different object key name.",
+    "respuesta2": "Update the CloudFormation stack with the correct values for the function code properties S3Bucket, S3Key, or S3ObjectVersion.",
+    "respuesta3": "Ensure that the function source code is base64-encoded before uploading the deployment package to S3.",
+    "respuesta4": "Modify the execution role of the Lambda function to allow S3 access permission to the deployment package .ZIP file.",
+    "respuesta5": "",
+    "respuesta6": "",
+    "respuestaCorrecta": "2",
+    "servicios": "Lambda, CloudFormation, S3"
+    },
+  {
+    "enunciado": "For a deployment using AWS CodeDeploy, what is the run order of the hooks for in-place deployments?",
+    "respuesta1": "Before Install -> Application Stop -> Application Start -> After Install",
+    "respuesta2": "Application Stop -> Before Install -> After Install -> Application Start",
+    "respuesta3": "Before Install -> Application Stop -> Validate Service -> Application Start",
+    "respuesta4": "Application Stop -> Before Install -> Validate Service -> Application Start",
+    "respuesta5": "",
+    "respuesta6": "",
+    "respuestaCorrecta": "2",
+    "servicios": "CodeDeploy, deployment"
     },
     {
-      "enunciado": "Which of the following platforms are supported by Elastic Beanstalk? Choose 2 answers",
-      "respuesta1": "Apache Tomcat",
-      "respuesta2": ".NET",
-      "respuesta3": "IBM Websphere",
-      "respuesta4": "Oracle JBoss",
-      "respuesta5": "PHP",
-      "respuestaCorrecta": ["1", "2"],
-      "servicios": "Elastic Beanstalk"
-    },
-    {
-      "enunciado": "A Developer needs temporary access to resources in a second account. What is the MOST secure way to achieve this?",
-      "respuesta1": "Use the Amazon Cognito user pools to get short-lived credentials for the second account",
-      "respuesta2": "Create a dedicated IAM access key for the second account, and send it by mail",
-      "respuesta3": "Create a cross-account access role, and use sts:AssumeRole API to get short-lived credentials",
-      "respuesta4": "Establish trust, and add an SSH key for the second account to the IAM user",
-      "respuestaCorrecta": "3",
-      "servicios": "Servicios utilizados: IAM, STS, cross-account access role"
-    },
-    {
-      "enunciado": "What step is required to update the function with the changes?",
-      "respuesta1": "Delete the .ZIP file on S3, and re-upload by using a different object key name",
-      "respuesta2": "Update the CloudFormation stack with the correct values for the function code properties S3Bucket, S3Key, or S3ObjectVersion",
-      "respuesta3": "Ensure that the function source code is base64-encoded before uploading the deployment package to S3",
-      "respuesta4": "Modify the execution role of the Lambda function to allow S3 access permission to the deployment package .ZIP file",
-      "respuestaCorrecta": "2",
-      "servicios": "AWS CloudFormation, AWS Lambda, Amazon S3"
-    },
+      "enunciado": "You attempt to store an object in the US-STANDARD region in Amazon S3, and receive a confirmation that it has been successfully stored. You then immediately make another API call and attempt to read this object. S3 tells you that the object does not exist. What could explain this behavior?",
+      "respuesta1": "US-STANDARD uses eventual consistency and it can take time for an object to be readable in a bucket",
+      "respuesta2": "Objects in Amazon S3 do not become visible until they are replicated to a second region.",
+      "respuesta3": "US-STANDARD imposes a 1 second delay before new objects are readable.",
+      "respuesta4": "You exceeded the bucket object limit, and once this limit is raised the object will be visible.",
+      "respuestaCorrecta": "1",
+      "servicios": "S3, eventual consistency"
+      },
     {
       "enunciado": "For a deployment using AWS CodeDeploy, what is the run order of the hooks for in-place deployments?",
       "respuesta1": "Before Install -> Application Stop -> Application Start -> After Install",

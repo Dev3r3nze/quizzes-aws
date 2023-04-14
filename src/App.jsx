@@ -1,24 +1,15 @@
-import { useState } from 'react'
-import Formulario from './components/FormularioCompo'
 import Configurador from './components/Configurador'
 import './App.css'
 
 function App () {
-  const [mostrarConfigurador, setMostrarConfigurador] = useState(true)
-
-  function reiniciarCuestionario () {
-    setMostrarConfigurador(true)
-  }
+  // const localStorage = window.localStorage
+  // const ultimoExamen = JSON.parse(localStorage.getItem('estadisticas'))
 
   return (
     <div className='App'>
-      {mostrarConfigurador
-        ? (
-          <Configurador onIniciarCuestionario={() => setMostrarConfigurador(false)} />
-          )
-        : (
-          <Formulario onTerminarCuestionario={reiniciarCuestionario} />
-          )}
+
+      <Configurador />
+
     </div>
   )
 }

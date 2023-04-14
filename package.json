@@ -9,8 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "lodash.shuffle": "^4.2.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "shufflejs": "6.1.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
@@ -20,6 +22,6 @@
     "vite": "^4.2.0"
   },
   "eslintConfig": {
-    "extends":"./node_modules/standard/eslintrc.json"
+    "extends": "./node_modules/standard/eslintrc.json"
   }
 }
