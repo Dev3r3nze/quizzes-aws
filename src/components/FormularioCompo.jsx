@@ -13,6 +13,7 @@ function Formulario (props) {
   const [startTime, setStartTime] = useState(performance.now())
   const [endTime, setEndTime] = useState(0)
   const [elapsedTime, setElapsedTime] = useState(0)
+  const [respuestasSeleccionadas, setRespuestasSeleccionadas] = useState([])
 
   const localStorage = window.localStorage
 
@@ -28,7 +29,11 @@ function Formulario (props) {
   const handleSubmit = (event) => {
     event.preventDefault()
     let puntaje = 0
-
+    console.log(respuestasSeleccionadas.length)
+    if (respuestasSeleccionadas.length < props.numPreguntas) {
+      window.alert('Debe seleccionar al menos una respuesta en cada pregunta')
+      return
+    }
     const preguntasRenderizadas = preguntasAleatorias.slice(0, props.numPreguntas)
 
     preguntasRenderizadas.forEach((pregunta, index) => {
@@ -70,6 +75,8 @@ function Formulario (props) {
   }
 
   const handleChange = (event) => {
+    const nuevasRespuestas = [...respuestas]
+
     const { name, value } = event.target
     const preguntaIndex = Number(name.split('-')[0])
     const pregunta = preguntasAleatorias[preguntaIndex]
@@ -100,6 +107,10 @@ function Formulario (props) {
         }
       })
     }
+    const nuevasRespuestasSeleccionadas = nuevasRespuestas
+      .map((respuestas, index) => respuestas.length > 0 ? index : null)
+      .filter((index) => index !== null)
+    setRespuestasSeleccionadas(nuevasRespuestasSeleccionadas)
   }
 
   useEffect(() => {
@@ -155,7 +166,7 @@ function Formulario (props) {
 
   const actualizarEstadisticas = (elapsedTime, puntuacion, numPreguntas, apto, terminado) => {
     // Obtener las estadísticas anteriores del LocalStorage
-    const estadisticasAnteriores = JSON.parse(localStorage.getItem('estadisticas')) || { tiempoTotal: 0, aciertosTotales: 0, preguntasTotales: 0, examenesTotales: 0 }
+    const estadisticasAnteriores = JSON.parse(localStorage.getItem('estadisticas')) || { tiempoTotal: 0, aciertosTotales: 0, aptosTotales: 0, preguntasTotales: 0, examenesTotales: 0 }
 
     // Agregar los nuevos datos a las estadísticas anteriores
     const estadisticasNuevas = {
@@ -165,6 +176,7 @@ function Formulario (props) {
       aptosTotales: estadisticasAnteriores.aptosTotales + (apto ? 1 : 0),
       examenesTotales: estadisticasAnteriores.examenesTotales + (terminado ? 1 : 0)
     }
+    console.log(apto)
 
     // Guardar las nuevas estadísticas en el LocalStorage
     localStorage.setItem('estadisticas', JSON.stringify(estadisticasNuevas))
@@ -194,6 +206,7 @@ function Formulario (props) {
                 checked={respuestas[index]?.includes('1')}
               />
               {pregunta.respuesta1}
+              {/*  */}
               <br />
             </label>
             <label className={`pregunta-${index + 1}`}>

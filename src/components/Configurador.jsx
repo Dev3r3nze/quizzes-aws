@@ -26,7 +26,7 @@ function Configurador () {
         <h1>Quizzes AWS</h1>
         <h2>Configúrate:</h2>
         <p>Selecciona un tema (Premium)</p>
-        <select disabled>
+        <select disabled={!premium}>
           <option value='1'>General</option>
           <option value='2'>S3</option>
           <option value='3'>IAM</option>

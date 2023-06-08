@@ -29,7 +29,7 @@
     "respuestaCorrecta": "2",
     "servicios": "Lambda, CloudFormation, S3"
     },
-  {
+    {
     "enunciado": "For a deployment using AWS CodeDeploy, what is the run order of the hooks for in-place deployments?",
     "respuesta1": "Before Install -> Application Stop -> Application Start -> After Install",
     "respuesta2": "Application Stop -> Before Install -> After Install -> Application Start",

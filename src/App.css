@@ -30,3 +30,7 @@ label {
   background-color: #7f2929;
 }
 
+#recomendacion p{
+  margin-top: 1rem;
+  font-size: 2rem;
+}

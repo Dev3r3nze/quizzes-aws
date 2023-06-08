@@ -47,64 +47,69 @@ function Stats (props) {
   // console.log(globalState)
 
   useEffect(() => {
-    const estadisticas = JSON.parse(localStorage.getItem('estadisticas')) || { tiempoTotal: 0, aciertosTotales: 0, preguntasTotales: 0, examenesTotales: 0 }
+    const estadisticas = JSON.parse(localStorage.getItem('estadisticas')) || { tiempoTotal: 0, aciertosTotales: 0, preguntasTotales: 0, examenesTotales: 0, aptosTotales: 0 }
     setEstadisticas(estadisticas)
   }, [])
   return (
     <div>
-      <h2>Estadísticas globales</h2>
-      {estadisticas.preguntasTotales > 0
-        ? <div>
-          <p>Exámenes totales: {estadisticas.examenesTotales}</p>
-          <p>Tiempo total: {Math.round((estadisticas.tiempoTotal / 60000) * 100) / 100} minutos</p>
-          <p>Aptos totales: {estadisticas.aptosTotales}</p>
-          <p>No aptos totales: {estadisticas.examenesTotales - estadisticas.aptosTotales}</p>
-          <p>Aciertos totales: {estadisticas.aciertosTotales}</p>
-          <p>Fallos totales: {estadisticas.fallosTotales}</p>
-          <p>Preguntas totales: {estadisticas.preguntasTotales}</p>
-          <p>Porcentaje de aciertos: {Math.round((estadisticas.aciertosTotales / estadisticas.preguntasTotales) * 100)}%</p>
-          </div>
-        : <div>
-          <p>Exámenes totales: 0</p>
-          <p>Tiempo total: 0 minutos</p>
-          <p>Aptos totales: 0</p>
-          <p>No aptos totales: 0</p>
-          <p>Aciertos totales: 0</p>
-          <p>Fallos totales: 0</p>
-          <p>Preguntas totales: 0</p>
-          <p>Porcentaje de aciertos: 0%</p>
-          </div>}
-      <h2>Estadísticas avanzadas {!props.premium && <i>(Premium)</i>}</h2>
-      {/* Premium */}
-      {props.premium && <p>Tiempo medio por examen: {Math.round((estadisticas.tiempoTotal / estadisticas.examenesTotales) * 100) / 100} segundos</p>}
-      {props.premium && <p>Tiempo medio por pregunta: {Math.round((estadisticas.tiempoTotal / estadisticas.preguntasTotales) * 100) / 100} segundos</p>}
-      {props.premium && <p>Porcentaje de fallos: {Math.round(((estadisticas.preguntasTotales - estadisticas.aciertosTotales) / estadisticas.preguntasTotales) * 100)}%</p>}
-      {props.premium && <p>Porcentaje de aptos: {Math.round((estadisticas.aptosTotales / estadisticas.examenesTotales) * 100)}%</p>}
-      {props.premium && <p>Porcentaje de no aptos: {Math.round(((estadisticas.examenesTotales - estadisticas.aptosTotales) / estadisticas.examenesTotales) * 100)}%</p>}
-
-      <h2>Estadísticas por tema {!props.premium && <i>(Premium)</i>}</h2>
-      <select name='' id='' disabled>
-        <option value='0'>Seleciona el tema</option>
-        <option value='1'>General</option>
-        <option value='2'>S3</option>
-        <option value='3'>IAM</option>
-      </select>
-      {props.premium && (
+      <h1>Estadísticas</h1>
+      {estadisticas && (
         <div>
-          <p>Porcentaje de aptos por tema: -</p>
-          <p>Porcentaje de no aptos por tema: -</p>
-          <p>Porcentaje de aciertos por tema: -</p>
-          <p>Porcentaje de fallos por tema: -</p>
-          <p>Tiempo medio por examen por tema: -</p>
-          <p>Tiempo medio por pregunta por tema: -</p>
-          <p>Tema más aconsejado a repasar: -</p>
-        </div>)}
+        <h2>Estadísticas globales</h2>
+        {estadisticas.preguntasTotales > 0
+          ? <div>
+            <p>Exámenes totales: {estadisticas.examenesTotales}</p>
+            <p>Tiempo total: {Math.round((estadisticas.tiempoTotal / 60000) * 100) / 100} minutos</p>
+            <p>Aptos totales: {estadisticas.aptosTotales}</p>
+            <p>No aptos totales: {estadisticas.examenesTotales - estadisticas.aptosTotales}</p>
+            <p>Aciertos totales: {estadisticas.aciertosTotales}</p>
+            <p>Fallos totales: {estadisticas.preguntasTotales - estadisticas.aciertosTotales}</p>
+            <p>Preguntas totales: {estadisticas.preguntasTotales}</p>
+            <p>Porcentaje de aciertos: {Math.round((estadisticas.aciertosTotales / estadisticas.preguntasTotales) * 100)}%</p>
+            </div>
+          : <div>
+            <p>Exámenes totales: 0</p>
+            <p>Tiempo total: 0 minutos</p>
+            <p>Aptos totales: 0</p>
+            <p>No aptos totales: 0</p>
+            <p>Aciertos totales: 0</p>
+            <p>Fallos totales: 0</p>
+            <p>Preguntas totales: 0</p>
+            <p>Porcentaje de aciertos: 0%</p>
+            </div>}
+        <h2>Estadísticas avanzadas {!props.premium && <i>(Premium)</i>}</h2>
+        {/* Premium */}
+        {props.premium && <p>Tiempo medio por examen: {Math.round((estadisticas.tiempoTotal / estadisticas.examenesTotales) * 100) / 100} segundos</p>}
+        {props.premium && <p>Tiempo medio por pregunta: {Math.round((estadisticas.tiempoTotal / estadisticas.preguntasTotales) * 100) / 100} segundos</p>}
+        {props.premium && <p>Porcentaje de fallos: {Math.round(((estadisticas.preguntasTotales - estadisticas.aciertosTotales) / estadisticas.preguntasTotales) * 100)}%</p>}
+        {props.premium && <p>Porcentaje de aptos: {Math.round((estadisticas.aptosTotales / estadisticas.examenesTotales) * 100)}%</p>}
+        {props.premium && <p>Porcentaje de no aptos: {Math.round(((estadisticas.examenesTotales - estadisticas.aptosTotales) / estadisticas.examenesTotales) * 100)}%</p>}
 
-      <h2>Te recomiendo: {Math.round((estadisticas.aptosTotales / estadisticas.examenesTotales) * 100) > 60
-        ? <p>PRESENTARTE</p>
-        : Math.round((estadisticas.aptosTotales / estadisticas.examenesTotales) * 100) > 40 ? <p>Buscar fecha</p> : <p>Seguir estudiando</p>}
-      </h2>
+        <h2>Estadísticas por tema {!props.premium && <i>(Premium)</i>}</h2>
+        <select name='' id='' disabled={!props.premium}>
+          <option value='0'>Seleciona el tema</option>
+          <option value='1'>General</option>
+          <option value='2'>S3</option>
+          <option value='3'>IAM</option>
+        </select>
+        {props.premium && (
+          <div>
+            <p>Porcentaje de aptos por tema: -</p>
+            <p>Porcentaje de no aptos por tema: -</p>
+            <p>Porcentaje de aciertos por tema: -</p>
+            <p>Porcentaje de fallos por tema: -</p>
+            <p>Tiempo medio por examen por tema: -</p>
+            <p>Tiempo medio por pregunta por tema: -</p>
+            <p>Tema más aconsejado a repasar: -</p>
+          </div>)}
 
+        <h2 id='recomendacion'>Te recomiendo: {Math.round((estadisticas.aptosTotales / estadisticas.examenesTotales) * 100) > 60
+          ? <p>PRESENTARTE</p>
+          : Math.round((estadisticas.aptosTotales / estadisticas.examenesTotales) * 100) > 40 ? <p>Buscar fecha</p> : <p>Seguir estudiando</p>}
+        </h2>
+
+        </div>
+      )}
     </div>
   )
 }
