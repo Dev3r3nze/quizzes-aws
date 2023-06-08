@@ -86,12 +86,13 @@ function Stats (props) {
         {props.premium && <p>Porcentaje de no aptos: {Math.round(((estadisticas.examenesTotales - estadisticas.aptosTotales) / estadisticas.examenesTotales) * 100)}%</p>}
 
         <h2>Estadísticas por tema {!props.premium && <i>(Premium)</i>}</h2>
+        {props.premium && (
         <select name='' id='' disabled={!props.premium}>
           <option value='0'>Seleciona el tema</option>
           <option value='1'>General</option>
           <option value='2'>S3</option>
           <option value='3'>IAM</option>
-        </select>
+        </select>)}
         {props.premium && (
           <div>
             <p>Porcentaje de aptos por tema: -</p>
@@ -105,7 +106,7 @@ function Stats (props) {
 
         <h2 id='recomendacion'>Te recomiendo: {Math.round((estadisticas.aptosTotales / estadisticas.examenesTotales) * 100) > 60
           ? <p>PRESENTARTE</p>
-          : Math.round((estadisticas.aptosTotales / estadisticas.examenesTotales) * 100) > 40 ? <p>Buscar fecha</p> : <p>Seguir estudiando</p>}
+          : Math.round((estadisticas.aptosTotales / estadisticas.examenesTotales) * 100) > 40 ? <p>Buscar fecha para el examen</p> : <p>Seguir estudiando</p>}
         </h2>
 
         </div>
