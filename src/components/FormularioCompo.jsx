@@ -15,6 +15,24 @@ function Formulario (props) {
   const [elapsedTime, setElapsedTime] = useState(0)
   const [respuestasSeleccionadas, setRespuestasSeleccionadas] = useState([])
 
+  const [tiempoMaximo, setTiempoMaximo] = useState(0)
+  if (props.numPreguntas === 33) { setTiempoMaximo(3900000) }
+  if (props.numPreguntas === 66) { setTiempoMaximo(7800000) }
+  if (props.numPreguntas === 130) { setTiempoMaximo(15600000) }
+
+  useEffect(() => {
+    if (preguntasAleatorias.length === 0) {
+      const preguntasAleatorias = shuffle(preguntas.preguntas).slice(0, props.numPreguntas)
+      setPreguntasAleatorias(preguntasAleatorias)
+    }
+
+    const timeoutId = setTimeout(() => {
+      handleSubmit()
+    }, tiempoMaximo)
+
+    return () => clearTimeout(timeoutId)
+  }, [])
+
   const localStorage = window.localStorage
 
   // const { globalState, setGlobalState } = useContext(MyContext)
