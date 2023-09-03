@@ -1,4 +1,4 @@
-# Quizzes AWS [en desarrollo]
+# Quizzes AWS [archivado]
 
 ## Cuestionarios de certificación
 Web dedicada a la preparación a las certificaciones de AWS Developer y AWS DevOps Engeneer
